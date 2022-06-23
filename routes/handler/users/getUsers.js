@@ -7,7 +7,7 @@ module.exports = async (req, res) => {
     //const sqlOptions = ['id', 'name', 'email', 'profession', 'avatar'];
 
     if (userIds.length){
-        //sqlOptions.where = {id : userIds}
+        
         const users = await User.findAll({
             attributes : ['id', 'name', 'email', 'profession', 'avatar'],
             where : {

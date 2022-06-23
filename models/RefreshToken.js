@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes)=>{
-    const RefreshToken = sequelize.define('refresh_tokens', {
+    const RefreshToken = sequelize.define('RefreshToken', {
         id: {
           type : DataTypes.INTEGER,
           primaryKey: true,
@@ -15,12 +15,12 @@ module.exports = (sequelize, DataTypes)=>{
           allowNull: false,
         },
         
-        created_at : {
+        createdAt : {
           type : DataTypes.DATE,
           field : 'created_at',
           allowNull: false,
         },
-        updated_at : {
+        updatedAt : {
           type : DataTypes.DATE,
           field : 'updated_at',
           allowNull: false,
