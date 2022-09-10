@@ -17,7 +17,7 @@ module.exports = async (req, res) => {
 
         if (!users){
             return res.status(404).json({
-                status : 'Error',
+                status : 'error',
                 message : 'User not found',
             });
         }
@@ -36,7 +36,7 @@ module.exports = async (req, res) => {
 
         if (!users){
             return res.status(404).json({
-                status : 'Error',
+                status : 'error',
                 message : 'User not found',
             });
         }

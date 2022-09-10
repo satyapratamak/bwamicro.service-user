@@ -24,7 +24,7 @@ module.exports = async (req, res) => {
         // Validation Error
         return res.status(400).json(
             {
-                status : "Error",
+                status : "error",
                 message : validate,
             }
         );
@@ -37,7 +37,7 @@ module.exports = async (req, res) => {
         // User not found
         return res.status(404).json(
             {
-                status : "Error",
+                status : "error",
                 message : "User not found",
             }
         );
@@ -52,7 +52,7 @@ module.exports = async (req, res) => {
             // Email already exists
             return res.status(409).json(
                 {
-                    status : "Error",
+                    status : "error",
                     message : "Email already exists",
                 }
             ); 
@@ -73,7 +73,7 @@ module.exports = async (req, res) => {
     if (updateProfile){
         return res.json(
             {
-                status : "Success",
+                status : "success",
                 message : "User updated data successfully",
                 data : {
                     id : user.id,
@@ -83,66 +83,4 @@ module.exports = async (req, res) => {
             }
         );
     }
-
-
-
-
-
-
-    // if (validate.length){
-    //     // Validation error
-    //     return res.status(400).json(
-    //         {
-    //             status : "Error",
-    //             message : validate,
-    //         }
-    //     );
-    // }else{
-    //     // Validation not error
-    //     const id = req.params.id;
-    //     const user = await User.findByPk(id);
-
-    //     if(!user){
-    //         // User not found
-    //         return res.status(404).json(
-    //             {
-    //                 status : "Error",
-    //                 message : "User not found",
-    //             }
-    //         );
-
-    //     }else{
-    //         // User Found
-    //         const email = req.body.mail;
-    //         return res.status(200).json(
-    //             {
-    //                 status : "Success",
-    //                 message : ""+email,
-    //             }
-    //         );
-
-    //         if (email){
-    //             const checkEmail = await User.findOne({
-    //                 where : {email : email}
-    //             });
-
-    //             if (checkEmail && email !== user.mail){
-    //                 // Email already exists
-    //                 return res.status(409).json(
-    //                     {
-    //                         status : "Error",
-    //                         message : "Email already exists",
-    //                     }
-    //                 ); 
-    //             } 
-
-    //         }
-                       
-    //     }
-    // }
-
-    
-
-    
-
 }

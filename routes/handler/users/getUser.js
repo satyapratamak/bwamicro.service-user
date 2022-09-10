@@ -11,7 +11,7 @@ module.exports = async (req, res) => {
     // Check user availability
     if (!user){
         return res.status(404).json({
-            status : 'Error',
+            status : 'error',
             message : 'User not found',
         });
     }

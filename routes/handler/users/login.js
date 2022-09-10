@@ -17,7 +17,7 @@ module.exports = async (req, res) => {
         // user inputs do not pass validation
         return res.status(400).json(
             {
-                status : "Error",
+                status : "error",
                 message : validate,
             }
         ); 
@@ -32,7 +32,7 @@ module.exports = async (req, res) => {
         if (!user){
             // Email has not been registered
             return res.status(404).json({
-                status : "Error",
+                status : "error",
                 message : "User not found",
             });
         }else {
@@ -44,12 +44,12 @@ module.exports = async (req, res) => {
             if(!isValidPassword) {
                 // Password not matched
                 return res.status(404).json({
-                    status : "Error",
+                    status : "error",
                     message : "Password not matched",
                 });
             }else{
                 return res.status(200).json({
-                    status : "Success",
+                    status : "success",
                     message : "Login successful",
                     data : {
                         id : user.id,

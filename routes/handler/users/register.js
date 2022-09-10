@@ -24,7 +24,7 @@ module.exports = async (req, res) => {
     if(validate.length){
         return res.status(400).json(
             {
-                status : "Error",
+                status : "error",
                 message : validate,
             }
         );
@@ -39,7 +39,7 @@ module.exports = async (req, res) => {
         // Email already exists
         return res.status(409).json(
             {
-                status : "Error",
+                status : "error",
                 message : "Email already exists",
             }
         );
@@ -57,20 +57,14 @@ module.exports = async (req, res) => {
         const createUser = await User.create(data);
 
         return res.status(200).json({
-            status : "Success",
+            status : "success",
             message : "User has been added successfully",
             data : {
                 id : createUser.id,
                 email : createUser.email,
             }
         });
-    }
-        // Email does not exist
-    
-
-        
-    
-
-    
+    }   // Email does not exist
+       
 }
 

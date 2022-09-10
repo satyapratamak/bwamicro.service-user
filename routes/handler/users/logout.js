@@ -9,7 +9,7 @@ module.exports = async (req, res)=>{
 
     if (!user){
         return res.status(404).json({
-            status : 'Error',
+            status : 'error',
             message : 'User not found',
         });
     }
@@ -20,13 +20,13 @@ module.exports = async (req, res)=>{
 
     if (!refreshToken){
         return res.status(400).json({
-            status : 'Error',
+            status : 'error',
             message : 'Error destroy Refresh Token',
         });
     }else{
 
         return res.json({
-            status : 'Success',
+            status : 'success',
             message : 'Refresh Token deleted successfully',
         });
 
